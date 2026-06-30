@@ -1,0 +1,13 @@
+{
+  "name": "kitchen-brigade",
+  "version": "1.0.0",
+  "description": "A lean, stack-agnostic multi-agent orchestration system modeled on the brigade de cuisine. Summon the chef with /chef; the chef runs the brigade (sous-chef, cook, expediter) to strategize, implement, run workflows, or diagnose.",
+  "author": {
+    "name": "Kyle Holzinger",
+    "url": "https://github.com/avegancafe"
+  },
+  "homepage": "https://github.com/avegancafe/kitchen-brigade",
+  "repository": "https://github.com/avegancafe/kitchen-brigade",
+  "license": "MIT",
+  "keywords": ["orchestration", "multi-agent", "brigade", "chef", "tdd", "workflow"]
+}
