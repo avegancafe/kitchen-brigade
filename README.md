@@ -34,6 +34,13 @@ Then restart Claude Code. (The marketplace and plugin repos are private — inst
 
 Artifacts land in **`_brigade/<slug>/`** at the git root (or an existing plans convention if the repo has one).
 
+## The skills
+
+| Skill | Triggers on |
+|-------|-------------|
+| **yes-chef** | You greenlight an already-agreed plan ("yes chef", "fire it", "ship it") — fires execution of the plan, never re-plans. |
+| **dinner-rush** | Something changed that you didn't do, or other agent sessions are running — sets a cautious, change-tolerant posture instead of "fixing" peer changes. Pairs naturally with the brigade running cooks in parallel. |
+
 ## Design principles
 
 - **One coordinator locus.** The main thread always *is* the chef (embedded) — no spawned-conductor indirection. The chef spawns the cast directly.

@@ -50,6 +50,7 @@ installed with `/plugin install kitchen-brigade@avegancafe-marketplace`.
 agents/                      # The cast: chef, cook, expediter, sous-chef (.md + frontmatter)
 commands/                    # Slash commands: chef, chef-strategize, chef-implement, chef-workflow, chef-diagnose
 skills/yes-chef/SKILL.md     # The "greenlight" skill that fires an agreed plan
+skills/dinner-rush/SKILL.md  # Concurrency-aware posture for working alongside parallel agents
 README.md                    # User-facing docs
 ```
 
