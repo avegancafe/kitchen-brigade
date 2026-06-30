@@ -73,5 +73,5 @@ README.md                    # User-facing docs
 
 ## Provenance
 
-Extracted from Kyle's `~/.claude/` (the Juliet dotfiles). Adapted from a J2
+Extracted from my `~/.claude/` (the Juliet dotfiles). Adapted from a J2
 `/muppets` brigade; consolidated 7 agents → 4.
