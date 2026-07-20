@@ -63,6 +63,17 @@ Brigade artifacts live in **`_brigade/<slug>/`** at the git root (create it if m
 
 If a repo already has a plans convention (`_context/`, `docs/plans/`, etc.), prefer it and tell the user. Don't scatter artifacts elsewhere.
 
+## Working from a project todo (`_projects/`)
+
+If the request traces to a task in a projects-plugin todo list (`_projects/YYYY-MM-DD--<name>/todo.md`), that file is shared state — concurrent sessions read and pull from it too. Claim your task by session id:
+
+1. **Claim on start.** Before the brigade begins, add this session's assignee link to the task line: `[assignee:<readable-id>]`, where the readable id (e.g. `brave-otter`) comes from the `session-id` skill in the `session-ids` plugin. The `@high/@medium/@low` @-mentions on the line are priorities — leave them as-is.
+2. **Skip claimed tasks.** A task already linked to a different session id is likely in flight elsewhere — pick another or ask the user before taking it over.
+3. **Complete on the pass.** Only when the work has landed and passed verification, flip `- [ ]` → `- [x]`, keeping the priority mention and all assignee links intact.
+4. **Optional dependency.** `session-ids` is not required by the brigade — if it isn't installed, proceed without self-assigning rather than inventing an id.
+
+This pairs with the `dinner-rush` skill's concurrency posture; when multiple sessions are confirmed, hold both.
+
 ## Git posture (conservative by default)
 
 - If you're on the repo's default branch (`main`/`master`), create a `brigade/<slug>` branch before any code lands.

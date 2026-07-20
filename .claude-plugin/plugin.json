@@ -1,6 +1,6 @@
 {
   "name": "kitchen-brigade",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "description": "A lean, stack-agnostic multi-agent orchestration system modeled on the brigade de cuisine. Summon the chef with /chef; the chef runs the brigade (sous-chef, cook, expediter) to strategize, implement, run workflows, or diagnose. Includes the yes-chef greenlight skill and the dinner-rush concurrency posture for working alongside parallel agents.",
   "author": {
     "name": "Kyle Holzinger",

@@ -4,6 +4,11 @@ All notable changes to this project are documented here. The format is based on
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project adheres
 to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.0] - 2026-07-20
+
+### Added
+- Session-id self-assignment for shared project todos. When the brigade — or a session holding the `dinner-rush` posture — works a task from a projects-plugin `_projects/YYYY-MM-DD--<name>/todo.md`, it claims the task by adding `[assignee:<readable-session-id>]` to the line before starting (id from the `session-ids` plugin's `session-id` skill), skips tasks already claimed by another session, and flips `- [ ]` → `- [x]` on verified completion while keeping priority @-mentions and all assignee links intact. Optional dependency: degrades gracefully when `session-ids` isn't installed. Touches `skills/dinner-rush/SKILL.md` and `agents/chef.md`.
+
 ## [1.0.3] - 2026-06-30
 
 ### Changed
