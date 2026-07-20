@@ -67,10 +67,12 @@ If a repo already has a plans convention (`_context/`, `docs/plans/`, etc.), pre
 
 If the request traces to a task in a projects-plugin todo list (`_projects/YYYY-MM-DD--<name>/todo.md`), that file is shared state — concurrent sessions read and pull from it too. Claim your task by session id:
 
-1. **Claim on start.** Before the brigade begins, add this session's assignee link to the task line: `[assignee:<readable-id>]`, where the readable id (e.g. `brave-otter`) comes from the `session-id` skill in the `session-ids` plugin. The `@high/@medium/@low` @-mentions on the line are priorities — leave them as-is.
+1. **Claim on start.** Before the brigade begins, add this session's assignee link to the task line: `[assignee:<readable-id>]`, where the readable id (e.g. `brave-otter`) comes from the `session-ids:session-id` skill (the `session-ids` plugin is a declared dependency of this plugin, so it installs alongside it). The `@high/@medium/@low` @-mentions on the line are priorities — leave them as-is.
 2. **Skip claimed tasks.** A task already linked to a different session id is likely in flight elsewhere — pick another or ask the user before taking it over.
 3. **Complete on the pass.** Only when the work has landed and passed verification, flip `- [ ]` → `- [x]`, keeping the priority mention and all assignee links intact.
-4. **Optional dependency.** `session-ids` is not required by the brigade — if it isn't installed, proceed without self-assigning rather than inventing an id.
+4. **Fallback.** If the `session-ids` skills are somehow unavailable (dependency disabled or removed), proceed without self-assigning rather than inventing an id.
+
+The other `session-ids` skills are fair game too when useful — `session-ids:list-sessions` to resolve a peer's `[assignee:<id>]` link back to a session, and `session-ids:session-info` for full details on this session.
 
 This pairs with the `dinner-rush` skill's concurrency posture; when multiple sessions are confirmed, hold both.
 

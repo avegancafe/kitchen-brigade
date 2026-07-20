@@ -9,5 +9,6 @@
   "homepage": "https://github.com/avegancafe/kitchen-brigade",
   "repository": "https://github.com/avegancafe/kitchen-brigade",
   "license": "MIT",
+  "dependencies": ["session-ids"],
   "keywords": ["orchestration", "multi-agent", "brigade", "chef", "tdd", "workflow"]
 }

@@ -18,7 +18,9 @@ Guidance for Claude Code when working **on this repository** (developing/maintai
    `${CLAUDE_PLUGIN_ROOT}/agents/chef.md` (and cook/expediter/sous-chef). Keep that
    variable form or the plugin breaks on other installs.
 3. **No hard external dependencies.** Codex / Playwright / Figma are optional —
-   never make the brigade require them.
+   never make the brigade require them. (Exception: the `session-ids` plugin from
+   the same marketplace is a declared dependency in `plugin.json` — it
+   auto-installs with the plugin, so referencing its skills is fine.)
 
 ---
 

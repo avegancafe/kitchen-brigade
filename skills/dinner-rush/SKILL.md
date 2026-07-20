@@ -35,10 +35,11 @@ Before reacting to anything surprising — a file carrying edits you didn't make
 
 When you pull work from a projects-plugin todo list (`_projects/YYYY-MM-DD--<name>/todo.md`), peer sessions may be pulling from the same list. Claim before you cook:
 
-- **Self-assign on claim.** Before starting a task, add this session's assignee link to the task line: `[assignee:<readable-id>]`. Get the readable id (adjective-noun pair like `brave-otter`) via the `session-id` skill from the `session-ids` plugin — its SessionStart hook injected `This session's readable id is "…"` at startup; if that context is gone, use the skill's state-file fallback. Note the `@high/@medium/@low` @-mentions on the line are *priorities* — leave them alone.
+- **Self-assign on claim.** Before starting a task, add this session's assignee link to the task line: `[assignee:<readable-id>]`. Get the readable id (adjective-noun pair like `brave-otter`) via the `session-ids:session-id` skill (`session-ids` is a declared dependency of this plugin, so it installs alongside it) — its SessionStart hook injected `This session's readable id is "…"` at startup; if that context is gone, use the skill's state-file fallback. Note the `@high/@medium/@low` @-mentions on the line are *priorities* — leave them alone.
 - **Respect existing claims.** A task already carrying another session's `[assignee:…]` link is probably in flight on a peer session — skip it unless the user reassigns it to you.
 - **Keep the line intact.** On completion flip `- [ ]` → `- [x]` and keep the priority and every assignee link, yours and peers'. Never strip a peer's link.
-- **Degrade gracefully.** If the `session-ids` plugin isn't installed (no readable id exists), skip the self-assignment rather than inventing an id — the plugin is optional.
+- **Degrade gracefully.** If the `session-ids` skills are somehow unavailable (dependency disabled or removed — no readable id exists), skip the self-assignment rather than inventing an id.
+- **Resolve peers when needed.** To map a peer's `[assignee:<id>]` link back to a session, use `session-ids:list-sessions`; `session-ids:session-info` gives full details on the current session.
 
 ## Risky operations — avoid or narrow
 
