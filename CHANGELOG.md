@@ -4,6 +4,15 @@ All notable changes to this project are documented here. The format is based on
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project adheres
 to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.1] - 2026-10-04
+
+### Added
+- CI (`.github/workflows/ci.yml`): `claude plugin validate`, plugin.json ↔ CHANGELOG version sync, and a guard against hard-coded `~/.claude/` paths in commands/agents/skills (CLAUDE.md rule 2).
+- `.github/workflows/release.yml`: on a version change on `main`, sends `plugin-released` to `avegancafe-marketplace`, which updates the `kitchen-brigade` entry itself. Needs the `MARKETPLACE_DISPATCH_TOKEN` secret.
+
+### Changed
+- CLAUDE.md / CONTRIBUTING: the bump rule no longer asks for a hand-edited marketplace entry.
+
 ## [1.1.0] - 2026-07-20
 
 ### Added
