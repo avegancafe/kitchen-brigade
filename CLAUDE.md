@@ -53,6 +53,8 @@ installed with `/plugin install kitchen-brigade@avegancafe-marketplace`.
 ```
 .claude-plugin/plugin.json   # Manifest (name, version, metadata). REQUIRED.
 .claude/patterns/            # Durable repo patterns (see ToC above)
+.github/workflows/ci.yml     # validate, version<->CHANGELOG, no hard-coded ~/.claude paths
+.github/workflows/release.yml  # On a version change on main: notify the marketplace (rule 1)
 agents/                      # The cast: chef, cook, expediter, sous-chef (.md + frontmatter)
 commands/                    # Slash commands: chef, chef-strategize, chef-implement, chef-workflow, chef-diagnose
 skills/yes-chef/SKILL.md     # The "greenlight" skill that fires an agreed plan
