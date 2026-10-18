@@ -4,6 +4,11 @@ All notable changes to this project are documented here. The format is based on
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project adheres
 to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.2.0] - 2026-10-19
+
+### Removed
+- Plugin dependency on `session-ids`, and the session-id self-assignment for `_projects/` todos that used it (`agents/chef.md` "Working from a project todo", `skills/dinner-rush/SKILL.md` "Claiming tasks in shared project todos"). `avegancafe-marketplace` 2.0.0 removed both the `session-ids` and `projects` plugins, so kitchen-brigade failed to load (`Dependency "session-ids@avegancafe-marketplace" is not installed`), and the self-assignment could only ever hit its fallback. CLAUDE.md rule 3 now forbids declared plugin dependencies outright.
+
 ## [1.1.2] - 2026-10-04
 
 ### Changed
