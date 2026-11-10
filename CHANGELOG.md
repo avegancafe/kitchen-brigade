@@ -4,6 +4,11 @@ All notable changes to this project are documented here. The format is based on
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project adheres
 to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.2.1] - 2026-11-10
+
+### Changed
+- Docs: the expediter and sous-chef descriptions name the muppets' merged `statler-and-waldorf` reviewer instead of the separate statler and waldorf agents.
+
 ## [1.2.0] - 2026-10-19
 
 ### Removed

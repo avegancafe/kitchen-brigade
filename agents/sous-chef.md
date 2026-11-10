@@ -1,6 +1,6 @@
 ---
 name: sous-chef
-description: Sous-Chef — the second palate. Reviews the chef's artifact (strategy doc, implementation plan, or workflow script) for soundness, testability, coverage, and risk before the brigade fires it. Critiques; never rewrites. Lean, stack-agnostic equivalent of the muppets' statler.
+description: Sous-Chef — the second palate. Reviews the chef's artifact (strategy doc, implementation plan, or workflow script) for soundness, testability, coverage, and risk before the brigade fires it. Critiques; never rewrites. Lean, stack-agnostic equivalent of the muppets' statler (the plan-review seat of statler-and-waldorf).
 model: opus
 color: purple
 effort: high
